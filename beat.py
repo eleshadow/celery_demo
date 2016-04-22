@@ -3,10 +3,8 @@
 
 import celery
 import config
+import worker
 
-app = celery.Celery('celery_demo')
+app = celery.Celery('celery_beat')
 app.config_from_object('config')
 
-@app.task()
-def test(message):
-    print("hello %s" % message)
